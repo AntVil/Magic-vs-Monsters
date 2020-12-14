@@ -1,0 +1,21 @@
+:root {
+    --mainColor: #FFFFFF;
+}
+
+@media (prefers-color-scheme: dark) {
+     :root {
+        --mainColor: #1d1d1d;
+    }
+}
+
+*{
+    transition: all 0.5s;
+}
+
+body{
+    background-color: var(--mainColor);
+}
+
+input{
+    border-radius: 10px;
+}
