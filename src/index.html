@@ -24,7 +24,7 @@
 
 <body>
     
-    <div id="loginScreen">
+    <div id="loginScreen" class="screen">
         <form onsubmit="return false">
             <input id="usernameInput" type="text" name="username" placeholder="username" />
             <br>
@@ -33,23 +33,30 @@
         </form>
     </div>
 
-    <div id="titleScreen">
+    <div id="titleScreen" class="screen">
+        <canvas id="titleScreenCanvas"></canvas>
+
+        <form id="titleScreenButtons" onsubmit="return false">
+            <button id="titleScreenStoryModeButton" onclick="game.startStoryMode()">story-mode</button>
+            <button id="titleScreenEndlessModeButton" onclick="game.startEndlessMode()">endless-mode</button>
+            <button id="titleScreenOptionsButton" onclick="game.toOptionsScreen()">options</button>
+            <button id="titleScreenAboutButton" onclick="game.toAboutScreen()">about</button>
+        </form>
+    </div>
+
+    <div id="optionsScreen" class="screen">
 
     </div>
 
-    <div id="optionsScreen">
+    <div id="aboutScreen" class="screen">
 
     </div>
 
-    <div id="aboutScreen">
+    <div id="selectScreen" class="screen">
 
     </div>
 
-    <div id="selectScreen">
-
-    </div>
-
-    <div id="inGameScreen">
+    <div id="inGameScreen" class="screen">
 
     </div>
 

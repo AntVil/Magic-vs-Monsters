@@ -1,0 +1,54 @@
+#titleScreenCanvas {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+#titleScreenButtons {
+    position: absolute;
+    left: 50%;
+    top: 75%;
+    width: 50%;
+    height: 40%;
+    transform: translate(-50%, -50%);
+
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 33% 33% 33%;
+    gap: 1%;
+}
+
+#titleScreenButtons > * {
+    font-size: 5vw;
+}
+
+#titleScreenStoryModeButton {
+    grid-column-start: 1;
+    grid-column-end: span 2;
+    grid-row-start: 1;
+    grid-row-end: span 1;
+}
+
+#titleScreenEndlessModeButton {
+    grid-column-start: 1;
+    grid-column-end: span 2;
+    grid-row-start: 2;
+    grid-row-end: span 1;
+}
+
+#titleScreenOptionsButton {
+    grid-column-start: 1;
+    grid-column-end: span 1;
+    grid-row-start: 3;
+    grid-row-end: span 1;
+}
+
+#titleScreenAboutButton {
+    grid-column-start: 2;
+    grid-column-end: span 1;
+    grid-row-start: 3;
+    grid-row-end: span 1;
+}

@@ -1,4 +1,4 @@
-#loginScreen, #titleScreen, #optionsScreen, #aboutScreen, #selectScreen, #inGameScreen {
+.screen {
     position: fixed;
     left: 50%;
     top: 50%;

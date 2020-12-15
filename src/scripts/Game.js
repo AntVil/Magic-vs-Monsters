@@ -24,6 +24,8 @@ class Game{
         this.usernameInput = document.getElementById("usernameInput");
 
         this.username;
+
+        this.lastTimeStamp = window.performance.now();
     }
 
     hideAllScreens(){
@@ -51,7 +53,7 @@ class Game{
         this.titleScreen.style.opacity = 1;
     }
 
-    toOptionScreen(){
+    toOptionsScreen(){
         this.hideAllScreens();
         this.optionsScreen.style.visibility = "visible"
         this.optionsScreen.style.opacity = 1;
@@ -84,10 +86,6 @@ class Game{
         }
     }
 
-    addPlugIn(){
-
-    }
-
     login(){
         let name = this.usernameInput.value.trim();
         if(name !== ""){
@@ -97,8 +95,20 @@ class Game{
         }
     }
 
-    update(){
+    startStoryMode(){
 
+    }
+
+    startEndlessMode(){
+
+    }
+
+    update(){
+        let elapsedTime = window.performance.now() - this.lastTimeStamp;
+
+
+
+        this.lastTimeStamp = window.performance.now()
     }
 
     render(){

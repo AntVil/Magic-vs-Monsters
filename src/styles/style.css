@@ -1,15 +1,22 @@
 :root {
     --mainColor: #FFFFFF;
+    --accentColor: #0099FF;
 }
 
 @media (prefers-color-scheme: dark) {
      :root {
         --mainColor: #1d1d1d;
+        --accentColor: #0099FF;
     }
 }
 
 *{
     transition: all 0.5s;
+}
+
+.screen{
+    border: 1px solid var(--accentColor);
+    border-radius: 5px;
 }
 
 body{
