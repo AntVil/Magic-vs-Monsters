@@ -45,7 +45,15 @@
     </div>
 
     <div id="optionsScreen" class="screen">
-
+        <form onsubmit="return false">
+            <label id="difficultyLabel" for="difficulty">difficulty</label>
+            <input id="difficultySlider" name="difficulty" type="range" min="0" max="2" step="1" />
+            <label id="musicVolumeLabel" for="musicVolume">music volume</label>
+            <input id="musicVolumeSlider" name="musicVolume" type="range" min="0" max="100" step="1" />
+            <label id="soundVolumeLabel" for="soundVolume">sound volume</label>
+            <input id="soundVolumeSlider" name="soundVolume" type="range" min="0" max="100" step="1" />
+            <button id="optionsDoneButton" type="submit" onclick="game">done</button>
+        </form>
     </div>
 
     <div id="aboutScreen" class="screen">
@@ -53,10 +61,16 @@
     </div>
 
     <div id="selectScreen" class="screen">
+        <div id="inGamePause">
+
+        </div>
 
     </div>
 
     <div id="inGameScreen" class="screen">
+        <div id="inGamePause">
+
+        </div>
 
     </div>
 

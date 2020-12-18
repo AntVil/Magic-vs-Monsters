@@ -1,0 +1,66 @@
+#optionsScreen>form {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 75%;
+    height: 50%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 25% 25% 25% 25%;
+    gap: calc(var(--screenHeight) / 100);
+}
+
+#optionsScreen>form>* {
+    font-size: calc(var(--screenWidth) / 20);
+    text-align: center;
+}
+
+#difficultyLabel {
+    grid-column-start: 1;
+    grid-column-end: span 1;
+    grid-row-start: 1;
+    grid-row-end: span 1;
+}
+
+#difficultySlider {
+    grid-column-start: 2;
+    grid-column-end: span 1;
+    grid-row-start: 1;
+    grid-row-end: span 1;
+}
+
+#musicVolumeLabel {
+    grid-column-start: 1;
+    grid-column-end: span 1;
+    grid-row-start: 2;
+    grid-row-end: span 1;
+}
+
+#musicVolumeSlider {
+    grid-column-start: 2;
+    grid-column-end: span 1;
+    grid-row-start: 2;
+    grid-row-end: span 1;
+}
+
+#soundVolumeLabel {
+    grid-column-start: 1;
+    grid-column-end: span 1;
+    grid-row-start: 3;
+    grid-row-end: span 1;
+}
+
+#soundVolumeSlider {
+    grid-column-start: 2;
+    grid-column-end: span 1;
+    grid-row-start: 3;
+    grid-row-end: span 1;
+}
+
+#optionsDoneButton {
+    grid-column-start: 1;
+    grid-column-end: span 2;
+    grid-row-start: 4;
+    grid-row-end: span 1;
+}

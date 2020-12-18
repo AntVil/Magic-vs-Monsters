@@ -1,10 +1,16 @@
+:root {
+    --screenWidth: calc(min(100vw, 100vh / 9 * 16));
+    --screenHeight: calc(min(100vw, 100vh / 9 * 16) * 9 / 16);
+}
+
 .screen {
     position: fixed;
     left: 50%;
     top: 50%;
-    width: 100vw;
-    height: 100vh;
+    width: var(--screenWidth);
+    height: var(--screenHeight);
     transform: translate(-50%, -50%);
     visibility: hidden;
     opacity: 0;
+    border-width: 1px;
 }

@@ -1,7 +1,12 @@
-#loginScreen > form {
+#loginScreen>form {
     position: relative;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+#loginScreen>form>* {
+    font-size: calc(var(--screenWidth) / 20);
     text-align: center;
 }

@@ -23,7 +23,7 @@ class Game{
 
         this.usernameInput = document.getElementById("usernameInput");
 
-        this.username;
+        this.username = "username";
 
         this.lastTimeStamp = window.performance.now();
     }
@@ -36,15 +36,9 @@ class Game{
     }
 
     toLoginScreen(){
-        let storedName = localStorage.getItem("username");
-        if(storedName === null || storedName === undefined){
-            this.hideAllScreens();
-            this.loginScreen.style.visibility = "visible"
-            this.loginScreen.style.opacity = 1;
-        }else{
-            this.username = storedName;
-            this.toTitleScreen();
-        }
+        this.hideAllScreens();
+        this.loginScreen.style.visibility = "visible"
+        this.loginScreen.style.opacity = 1;
     }
 
     toTitleScreen(){
@@ -77,20 +71,10 @@ class Game{
         this.inGameScreen.style.opacity = 1;
     }
 
-    updateSize(w, h){
-        this.screenWidth = Math.min(w, h / this.aspectRatio[0] * this.aspectRatio[1]);
-        this.screenHeight = this.screenWidth * this.aspectRatio[0] / this.aspectRatio[1];
-        for(let i=0;i<this.screens.length;i++){
-            this.screens[i].style.width = `${this.screenWidth}px`;
-            this.screens[i].style.height = `${this.screenHeight}px`;
-        }
-    }
-
     login(){
         let name = this.usernameInput.value.trim();
         if(name !== ""){
             this.username = name;
-            localStorage.setItem("username", this.username);
             this.toTitleScreen();
         }
     }

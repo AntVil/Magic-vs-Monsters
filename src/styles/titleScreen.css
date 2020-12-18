@@ -14,15 +14,14 @@
     width: 50%;
     height: 40%;
     transform: translate(-50%, -50%);
-
     display: grid;
     grid-template-columns: 50% 50%;
     grid-template-rows: 33% 33% 33%;
-    gap: 1%;
+    gap: calc(var(--screenHeight) / 200);
 }
 
-#titleScreenButtons > * {
-    font-size: 5vw;
+#titleScreenButtons>* {
+    font-size: calc(var(--screenWidth) / 20);
 }
 
 #titleScreenStoryModeButton {
