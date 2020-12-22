@@ -1,0 +1,28 @@
+#aboutScreen>div {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 75%;
+    height: 50%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 75% 25%;
+    gap: calc(var(--screenHeight) / 100);
+}
+
+#aboutScreen>div>#aboutText {
+    grid-column-start: 1;
+    grid-column-end: span 1;
+    grid-row-start: 1;
+    grid-row-end: span 1;
+}
+
+#aboutScreen>div>#aboutDoneButton {
+    grid-column-start: 1;
+    grid-column-end: span 1;
+    grid-row-start: 2;
+    grid-row-end: span 1;
+
+    font-size: calc(var(--screenWidth) / 20);
+}

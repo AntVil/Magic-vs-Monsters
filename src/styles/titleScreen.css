@@ -1,4 +1,4 @@
-#titleScreenCanvas {
+#titleScreen>#titleScreenCanvas {
     position: absolute;
     left: 0;
     top: 0;
@@ -7,7 +7,37 @@
     z-index: -1;
 }
 
-#titleScreenButtons {
+#titleScreen>#titleScreenTitle{
+    left: 50%;
+    top: 25%;
+    text-align: center;
+    font-size: calc(var(--screenWidth) / 10);
+    animation: titleScreenTitleAnimation 3s infinite;
+}
+
+@keyframes titleScreenTitleAnimation{
+    0%{
+        transform: rotate(5deg);
+    }
+
+    25%{
+        transform: rotate(-5deg);
+    }
+
+    50%{
+        transform: rotate(5deg);
+    }
+
+    75%{
+        transform: rotate(-5deg);
+    }
+
+    100%{
+        transform: rotate(5deg);
+    }
+}
+
+#titleScreen>#titleScreenButtons {
     position: absolute;
     left: 50%;
     top: 75%;
@@ -20,32 +50,32 @@
     gap: calc(var(--screenHeight) / 200);
 }
 
-#titleScreenButtons>* {
+#titleScreen>#titleScreenButtons>* {
     font-size: calc(var(--screenWidth) / 20);
 }
 
-#titleScreenStoryModeButton {
+#titleScreen>#titleScreenButtons>#titleScreenStoryModeButton {
     grid-column-start: 1;
     grid-column-end: span 2;
     grid-row-start: 1;
     grid-row-end: span 1;
 }
 
-#titleScreenEndlessModeButton {
+#titleScreen>#titleScreenButtons>#titleScreenEndlessModeButton {
     grid-column-start: 1;
     grid-column-end: span 2;
     grid-row-start: 2;
     grid-row-end: span 1;
 }
 
-#titleScreenOptionsButton {
+#titleScreen>#titleScreenButtons>#titleScreenOptionsButton {
     grid-column-start: 1;
     grid-column-end: span 1;
     grid-row-start: 3;
     grid-row-end: span 1;
 }
 
-#titleScreenAboutButton {
+#titleScreen>#titleScreenButtons>#titleScreenAboutButton {
     grid-column-start: 2;
     grid-column-end: span 1;
     grid-row-start: 3;

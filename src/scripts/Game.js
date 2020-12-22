@@ -84,7 +84,7 @@ class Game{
     }
 
     startEndlessMode(){
-
+        this.toSelectScreen();
     }
 
     update(){

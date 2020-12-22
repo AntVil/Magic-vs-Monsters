@@ -36,6 +36,8 @@
     <div id="titleScreen" class="screen">
         <canvas id="titleScreenCanvas"></canvas>
 
+        <h1 id="titleScreenTitle">Magic-vs-Monsters</h1>
+
         <form id="titleScreenButtons" onsubmit="return false">
             <button id="titleScreenStoryModeButton" onclick="game.startStoryMode()">story-mode</button>
             <button id="titleScreenEndlessModeButton" onclick="game.startEndlessMode()">endless-mode</button>
@@ -52,23 +54,38 @@
             <input id="musicVolumeSlider" name="musicVolume" type="range" min="0" max="100" step="1" />
             <label id="soundVolumeLabel" for="soundVolume">sound volume</label>
             <input id="soundVolumeSlider" name="soundVolume" type="range" min="0" max="100" step="1" />
-            <button id="optionsDoneButton" type="submit" onclick="game">done</button>
+            <button id="optionsDoneButton" type="submit" onclick="game.toTitleScreen()">done</button>
         </form>
     </div>
 
     <div id="aboutScreen" class="screen">
-
+        <div>
+            <article id="aboutText">
+                This is a project to create a tower-defense and strategy game.
+            </article>
+            <button id="aboutDoneButton" type="submit" onclick="game.toTitleScreen()">done</button>
+        </div>
     </div>
 
     <div id="selectScreen" class="screen">
-        <div id="inGamePause">
+        <canvas id="selectScreenCanvas"></canvas>
+
+        <div id="selectScreenPause">
 
         </div>
 
+        <div id="select">
+            <div id="selected">selected</div>
+            <div id="selectionInfo">info</div>
+            <canvas id="selectionCanvas"></canvas>
+            <div id="selectables">
+                <div>element 1</div>
+            </div>
+        </div>
     </div>
 
     <div id="inGameScreen" class="screen">
-        <div id="inGamePause">
+        <div id="inGameScreenPause">
 
         </div>
 
