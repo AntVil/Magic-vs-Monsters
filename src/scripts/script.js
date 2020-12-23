@@ -2,7 +2,7 @@ let game;
 
 window.onload = function(){
     game = new Game();
-    game.toLoginScreen();
+    game.toLogin();
     
     loop();
 }

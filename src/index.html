@@ -7,7 +7,7 @@
     <title>Magic-vs-Monsters</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
 
-    <!--link rel="icon" type="image/png" href="images/Logo.png"-->
+    <link rel="icon" type="image/png" href="images/default.png">
 
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/style.css">
@@ -18,6 +18,10 @@
     <link rel="stylesheet" href="styles/selectScreen.css">
     <link rel="stylesheet" href="styles/inGameScreen.css">
 
+    <script type="text/javascript" src="scripts/InputHandler.js"></script>
+    <script type="text/javascript" src="scripts/AudioHandler.js"></script>
+    <script type="text/javascript" src="scripts/ScreenHandler.js"></script>
+    <script type="text/javascript" src="scripts/TileGrid.js"></script>
     <script type="text/javascript" src="scripts/Game.js"></script>
     <script type="text/javascript" src="scripts/script.js"></script>
 </head>
@@ -41,8 +45,8 @@
         <form id="titleScreenButtons" onsubmit="return false">
             <button id="titleScreenStoryModeButton" onclick="game.startStoryMode()">story-mode</button>
             <button id="titleScreenEndlessModeButton" onclick="game.startEndlessMode()">endless-mode</button>
-            <button id="titleScreenOptionsButton" onclick="game.toOptionsScreen()">options</button>
-            <button id="titleScreenAboutButton" onclick="game.toAboutScreen()">about</button>
+            <button id="titleScreenOptionsButton" onclick="game.toOptions()">options</button>
+            <button id="titleScreenAboutButton" onclick="game.toAbout()">about</button>
         </form>
     </div>
 
@@ -54,7 +58,7 @@
             <input id="musicVolumeSlider" name="musicVolume" type="range" min="0" max="100" step="1" />
             <label id="soundVolumeLabel" for="soundVolume">sound volume</label>
             <input id="soundVolumeSlider" name="soundVolume" type="range" min="0" max="100" step="1" />
-            <button id="optionsDoneButton" type="submit" onclick="game.toTitleScreen()">done</button>
+            <button id="optionsDoneButton" type="submit" onclick="game.toTitle()">done</button>
         </form>
     </div>
 
@@ -63,7 +67,7 @@
             <article id="aboutText">
                 This is a project to create a tower-defense and strategy game.
             </article>
-            <button id="aboutDoneButton" type="submit" onclick="game.toTitleScreen()">done</button>
+            <button id="aboutDoneButton" type="submit" onclick="game.toTitle()">done</button>
         </div>
     </div>
 
