@@ -1,31 +1,37 @@
-#selectScreen>#select{
+:root{
+    --selectScreenSelectablesInRow: 4;
+    --selectScreenSelectablesInColum: 3;
+    --selectScreenSelectableWidth: calc(var(--screenWidth) / 12);
+    --selectScreenSelectableHeight: calc(var(--screenHeight) / 12);
+    --scrollBarSize: 20px;
+}
+
+#selectScreen>form{
     position: absolute;
     left: 50%;
     top: 50%;
-    width: 50%;
-    height: 90%;
     transform: translate(-50%, -50%);
     display: grid;
-    grid-template-columns: 20% 40% 40%;
-    grid-template-rows: 40% 60%;
+    grid-template-columns: var(--selectScreenSelectableWidth) calc(var(--selectScreenSelectableWidth) * var(--selectScreenSelectablesInRow) / 2 + 1px + var(--scrollBarSize)) calc(var(--selectScreenSelectableWidth) * var(--selectScreenSelectablesInRow) / 2 + 1px);
+    grid-template-rows: calc(var(--selectScreenSelectableWidth) * var(--selectScreenSelectablesInRow) / 2 + 1px) calc(var(--selectScreenSelectableHeight) * var(--selectScreenSelectablesInColum) + 1px);
     gap: calc(var(--screenHeight) / 100);
 }
 
-#selectScreen>#select>#selected {
+#selectScreenSelected {
     grid-column-start: 1;
     grid-column-end: span 1;
     grid-row-start: 1;
     grid-row-end: span 2;
 }
 
-#selectScreen>#select>#selectionInfo {
+#selectScreenSelectionInfo {
     grid-column-start: 2;
     grid-column-end: span 1;
     grid-row-start: 1;
     grid-row-end: span 1;
 }
 
-#selectScreen>#select>#selectionCanvas {
+#selectScreenSelectionCanvas {
     grid-column-start: 3;
     grid-column-end: span 1;
     grid-row-start: 1;
@@ -35,18 +41,21 @@
     height: 100%;
 }
 
-#selectScreen>#select>#selectables {
+#selectScreenSelectables {
     grid-column-start: 2;
     grid-column-end: span 2;
     grid-row-start: 2;
     grid-row-end: span 1;
 
-    display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
-
     overflow-y: scroll;
 }
 
-#selectScreen>#select>#selectables>*{
+
+
+#selectScreenSelectables>button{
+    width: var(--selectScreenSelectableWidth);
+    height: var(--selectScreenSelectableHeight);
     
+    background: url("../images/magicIcons/default.png") no-repeat;
+	background-size: cover;
 }

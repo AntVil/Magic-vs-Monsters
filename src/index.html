@@ -7,7 +7,7 @@
     <title>Magic-vs-Monsters</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
 
-    <link rel="icon" type="image/png" href="images/default.png">
+    <link rel="icon" type="image/png" href="images/pageIcons/default.png">
 
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/style.css">
@@ -22,15 +22,16 @@
     <script type="text/javascript" src="scripts/AudioHandler.js"></script>
     <script type="text/javascript" src="scripts/ScreenHandler.js"></script>
     <script type="text/javascript" src="scripts/TileGrid.js"></script>
+    <script type="text/javascript" src="scripts/AccountHandler.js"></script>
     <script type="text/javascript" src="scripts/Game.js"></script>
     <script type="text/javascript" src="scripts/script.js"></script>
 </head>
 
 <body>
-    
+
     <div id="loginScreen" class="screen">
         <form onsubmit="return false">
-            <input id="usernameInput" type="text" name="username" placeholder="username" />
+            <input id="loginScreenUsernameInput" type="text" name="username" placeholder="username" />
             <br>
             <br>
             <button type="submit" onclick="game.login()">play</button>
@@ -40,9 +41,9 @@
     <div id="titleScreen" class="screen">
         <canvas id="titleScreenCanvas"></canvas>
 
-        <h1 id="titleScreenTitle">Magic-vs-Monsters</h1>
+        <h1>Magic-vs-Monsters</h1>
 
-        <form id="titleScreenButtons" onsubmit="return false">
+        <form onsubmit="return false">
             <button id="titleScreenStoryModeButton" onclick="game.startStoryMode()">story-mode</button>
             <button id="titleScreenEndlessModeButton" onclick="game.startEndlessMode()">endless-mode</button>
             <button id="titleScreenOptionsButton" onclick="game.toOptions()">options</button>
@@ -52,23 +53,23 @@
 
     <div id="optionsScreen" class="screen">
         <form onsubmit="return false">
-            <label id="difficultyLabel" for="difficulty">difficulty</label>
-            <input id="difficultySlider" name="difficulty" type="range" min="0" max="2" step="1" />
-            <label id="musicVolumeLabel" for="musicVolume">music volume</label>
-            <input id="musicVolumeSlider" name="musicVolume" type="range" min="0" max="100" step="1" />
-            <label id="soundVolumeLabel" for="soundVolume">sound volume</label>
-            <input id="soundVolumeSlider" name="soundVolume" type="range" min="0" max="100" step="1" />
-            <button id="optionsDoneButton" type="submit" onclick="game.toTitle()">done</button>
+            <label id="optionsScreenDifficultyLabel" for="difficulty">difficulty</label>
+            <input id="optionsScreenDifficultySlider" name="difficulty" type="range" min="0" max="2" step="1" />
+            <label id="optionsScreenMusicVolumeLabel" for="musicVolume">music volume</label>
+            <input id="optionsScreenMusicVolumeSlider" name="musicVolume" type="range" min="0" max="100" step="1" />
+            <label id="optionsScreenSoundVolumeLabel" for="soundVolume">sound volume</label>
+            <input id="optionsScreenSoundVolumeSlider" name="soundVolume" type="range" min="0" max="100" step="1" />
+            <button id="optionsScreenDoneButton" type="submit" onclick="game.toTitle()">done</button>
         </form>
     </div>
 
     <div id="aboutScreen" class="screen">
-        <div>
-            <article id="aboutText">
+        <form onsubmit="return false">
+            <article>
                 This is a project to create a tower-defense and strategy game.
             </article>
-            <button id="aboutDoneButton" type="submit" onclick="game.toTitle()">done</button>
-        </div>
+            <button type="submit" onclick="game.toTitle()">done</button>
+        </form>
     </div>
 
     <div id="selectScreen" class="screen">
@@ -78,14 +79,12 @@
 
         </div>
 
-        <div id="select">
-            <div id="selected">selected</div>
-            <div id="selectionInfo">info</div>
-            <canvas id="selectionCanvas"></canvas>
-            <div id="selectables">
-                <div>element 1</div>
-            </div>
-        </div>
+        <form onsubmit="return false">
+            <div id="selectScreenSelected"></div>
+            <div id="selectScreenSelectionInfo"></div>
+            <canvas id="selectScreenSelectionCanvas"></canvas>
+            <div id="selectScreenSelectables"></div>
+        </form>
     </div>
 
     <div id="inGameScreen" class="screen">

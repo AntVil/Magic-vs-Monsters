@@ -16,49 +16,49 @@
     text-align: center;
 }
 
-#difficultyLabel {
+#optionsScreenDifficultyLabel {
     grid-column-start: 1;
     grid-column-end: span 1;
     grid-row-start: 1;
     grid-row-end: span 1;
 }
 
-#difficultySlider {
+#optionsScreenDifficultySlider {
     grid-column-start: 2;
     grid-column-end: span 1;
     grid-row-start: 1;
     grid-row-end: span 1;
 }
 
-#musicVolumeLabel {
+#optionsScreenMusicVolumeLabel {
     grid-column-start: 1;
     grid-column-end: span 1;
     grid-row-start: 2;
     grid-row-end: span 1;
 }
 
-#musicVolumeSlider {
+#optionsScreenMusicVolumeSlider {
     grid-column-start: 2;
     grid-column-end: span 1;
     grid-row-start: 2;
     grid-row-end: span 1;
 }
 
-#soundVolumeLabel {
+#optionsScreenSoundVolumeLabel {
     grid-column-start: 1;
     grid-column-end: span 1;
     grid-row-start: 3;
     grid-row-end: span 1;
 }
 
-#soundVolumeSlider {
+#optionsScreenSoundVolumeSlider {
     grid-column-start: 2;
     grid-column-end: span 1;
     grid-row-start: 3;
     grid-row-end: span 1;
 }
 
-#optionsDoneButton {
+#optionsScreenDoneButton {
     grid-column-start: 1;
     grid-column-end: span 2;
     grid-row-start: 4;

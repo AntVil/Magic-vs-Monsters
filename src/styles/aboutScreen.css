@@ -1,4 +1,4 @@
-#aboutScreen>div {
+#aboutScreen>form {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -11,14 +11,14 @@
     gap: calc(var(--screenHeight) / 100);
 }
 
-#aboutScreen>div>#aboutText {
+#aboutScreen>form>article {
     grid-column-start: 1;
     grid-column-end: span 1;
     grid-row-start: 1;
     grid-row-end: span 1;
 }
 
-#aboutScreen>div>#aboutDoneButton {
+#aboutScreen>form>button {
     grid-column-start: 1;
     grid-column-end: span 1;
     grid-row-start: 2;

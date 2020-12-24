@@ -4,10 +4,7 @@ class Game{
         this.inputHandler = new InputHandler();
         this.audioHandler = new AudioHandler();
         this.tileGrid = new TileGrid();
-
-        this.usernameInput = document.getElementById("usernameInput");
-
-        this.username = "username";
+        this.accountHandler = new AccountHandler();
 
         this.lastTimeStamp = window.performance.now();
     }
@@ -17,9 +14,9 @@ class Game{
     }
 
     login(){
-        let name = this.usernameInput.value.trim();
+        let name = this.screenHandler.getUsername();
         if(name !== ""){
-            this.username = name;
+            this.accountHandler.user(name);
             this.toTitle();
         }
     }
@@ -37,10 +34,12 @@ class Game{
     }
 
     startStoryMode(){
+        this.screenHandler.setupSelectScreen([1, 2, 3, 4, 5]);
         this.screenHandler.toSelectScreen();
     }
 
     startEndlessMode(){
+        this.screenHandler.setupSelectScreen([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]);
         this.screenHandler.toSelectScreen();
     }
 
