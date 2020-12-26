@@ -1,5 +1,7 @@
 class AccountHandler{
-    constructor(){
+    constructor(game) {
+        this.game = game;
+        
         this.username = "unknown";
     }
 

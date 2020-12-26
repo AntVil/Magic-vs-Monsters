@@ -1,10 +1,10 @@
 class Game{
     constructor(){
-        this.screenHandler = new ScreenHandler();
-        this.inputHandler = new InputHandler();
-        this.audioHandler = new AudioHandler();
-        this.tileGrid = new TileGrid();
-        this.accountHandler = new AccountHandler();
+        this.screenHandler = new ScreenHandler(this);
+        this.inputHandler = new InputHandler(this);
+        this.audioHandler = new AudioHandler(this);
+        this.tileGrid = new TileGrid(this);
+        this.accountHandler = new AccountHandler(this);
 
         this.lastTimeStamp = window.performance.now();
     }
@@ -34,12 +34,14 @@ class Game{
     }
 
     startStoryMode(){
-        this.screenHandler.setupSelectScreen([1, 2, 3, 4, 5]);
+        let selectables = this.tileGrid.getPlayables();
+        this.screenHandler.setupSelectScreen(selectables);
         this.screenHandler.toSelectScreen();
     }
 
     startEndlessMode(){
-        this.screenHandler.setupSelectScreen([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]);
+        let selectables = this.tileGrid.getPlayables();
+        this.screenHandler.setupSelectScreen(selectables);
         this.screenHandler.toSelectScreen();
     }
 

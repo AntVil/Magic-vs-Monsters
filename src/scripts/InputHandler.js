@@ -1,5 +1,6 @@
 class InputHandler{
-    constructor(){
+    constructor(game) {
+        this.game = game;
         
     }
 }

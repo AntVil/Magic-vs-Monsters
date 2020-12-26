@@ -52,10 +52,15 @@
 
 
 
-#selectScreenSelectables>button{
+.selectable{
     width: var(--selectScreenSelectableWidth);
     height: var(--selectScreenSelectableHeight);
     
-    background: url("../images/magicIcons/default.png") no-repeat;
+    background: url("../images/icons/default.png") no-repeat;
 	background-size: cover;
+}
+
+.selectable:disabled{
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
 }

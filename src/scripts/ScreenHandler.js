@@ -1,5 +1,9 @@
+const ScreenHandlerSymbol = Symbol("ScreenHandler");
+
 class ScreenHandler {
-    constructor() {
+    constructor(game) {
+        this.game = game;
+        
         this.loginScreen = document.getElementById("loginScreen");
         this.titleScreen = document.getElementById("titleScreen");
         this.optionsScreen = document.getElementById("optionsScreen");
@@ -23,6 +27,10 @@ class ScreenHandler {
         this.selectScreenSelectionInfo = document.getElementById("selectScreenSelectionInfo");
         this.selectScreenSelectionCanvas = document.getElementById("selectScreenSelectionCanvas");
         this.selectScreenSelectables = document.getElementById("selectScreenSelectables");
+
+
+        this.MAXIMUM_SELECTED = 6;
+        this.selectedAmount = 0;
     }
 
     hideAllScreens() {
@@ -76,11 +84,48 @@ class ScreenHandler {
         this.selectScreenSelected.innerHTML = "";
         this.selectScreenSelectionInfo.innerHTML = "";
         this.selectScreenSelectables.innerHTML = "";
-        for (var i = 0; i < selectables.length; i++) {
-            var selectable = document.createElement("button");
-            selectable.id = "selectScreenSelectables" + i;
+        for (let i = 0; i < selectables.length; i++) {
+            let selectable = document.createElement("button");
             selectable.classList.add("selectable");
+            selectable.id = "selectScreenSelectables-" + i;
+            selectable.setAttribute("counterpartId", "selectScreenSelected-" + i);
+
+            selectable.setAttribute("description", "description" + i);
+            
+            selectable[ScreenHandlerSymbol] = this;
+            selectable.onclick = function(){
+                this[ScreenHandlerSymbol].selectScreenSelect(this);
+            }
+
             selectScreenSelectables.appendChild(selectable);
         }
+    }
+    
+    selectScreenSelect(element){
+        if(this.selectedAmount < this.MAXIMUM_SELECTED){
+            element.disabled = true;
+
+            let selected = document.createElement("button");
+            selected.classList.add("selectable");
+            selected.id = element.getAttribute("counterpartId");
+            selected.setAttribute("counterpartId", element.id);
+
+            selected[ScreenHandlerSymbol] = this;
+            selected.onclick = function(){
+                this[ScreenHandlerSymbol].selectScreenDeselect(this);
+            }
+
+            this.selectScreenSelected.appendChild(selected);
+            this.selectedAmount++;
+        }
+
+        this.selectScreenCurrentlySelected = element;
+        this.selectScreenSelectionInfo.innerText = element.getAttribute("description");
+    }
+
+    selectScreenDeselect(element){
+        element.remove();
+        document.getElementById(element.getAttribute("counterpartId")).disabled = false;
+        this.selectedAmount--;
     }
 }

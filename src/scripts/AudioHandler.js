@@ -1,5 +1,6 @@
 class AudioHandler{
-    constructor(){
+    constructor(game) {
+        this.game = game;
         
     }
 }
