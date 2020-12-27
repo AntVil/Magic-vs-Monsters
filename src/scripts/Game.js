@@ -3,10 +3,8 @@ class Game{
         this.screenHandler = new ScreenHandler(this);
         this.inputHandler = new InputHandler(this);
         this.audioHandler = new AudioHandler(this);
-        this.tileGrid = new TileGrid(this);
+        this.tileGridHandler = new TileGridHandler(this);
         this.accountHandler = new AccountHandler(this);
-
-        this.lastTimeStamp = window.performance.now();
     }
 
     toLogin(){
@@ -34,26 +32,26 @@ class Game{
     }
 
     startStoryMode(){
-        let selectables = this.tileGrid.getPlayables();
+        let selectables = this.tileGridHandler.getPlayables();
         this.screenHandler.setupSelectScreen(selectables);
         this.screenHandler.toSelectScreen();
     }
 
     startEndlessMode(){
-        let selectables = this.tileGrid.getPlayables();
+        let selectables = this.tileGridHandler.getPlayables();
         this.screenHandler.setupSelectScreen(selectables);
         this.screenHandler.toSelectScreen();
     }
 
-    update(){
-        let elapsedTime = window.performance.now() - this.lastTimeStamp;
-
-
-
-        this.lastTimeStamp = window.performance.now()
+    commitSelection(){
+        this.screenHandler.toInGameScreen();
     }
 
-    render(){
+    update(elapsedTime){
+        
+    }
 
+    render(elapsedTime){
+        this.screenHandler.render(elapsedTime);
     }
 }

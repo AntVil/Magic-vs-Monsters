@@ -7,7 +7,7 @@
     <title>Magic-vs-Monsters</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
 
-    <link rel="icon" type="image/png" href="images/pageIcons/default.png">
+    <link rel="icon" type="image/png" href="images/icons/pageIcons/default.png">
 
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/style.css">
@@ -18,11 +18,19 @@
     <link rel="stylesheet" href="styles/selectScreen.css">
     <link rel="stylesheet" href="styles/inGameScreen.css">
 
-    <script type="text/javascript" src="scripts/InputHandler.js"></script>
-    <script type="text/javascript" src="scripts/AudioHandler.js"></script>
-    <script type="text/javascript" src="scripts/ScreenHandler.js"></script>
-    <script type="text/javascript" src="scripts/TileGrid.js"></script>
-    <script type="text/javascript" src="scripts/AccountHandler.js"></script>
+
+    <script type="text/javascript" src="scripts/Handler/InputHandler.js"></script>
+    <script type="text/javascript" src="scripts/Handler/AudioHandler.js"></script>
+    <script type="text/javascript" src="scripts/Handler/AccountHandler.js"></script>
+
+    <script type="text/javascript" src="scripts/Handler/TileGridHandler/TileGridHandler.js"></script>
+    <script type="text/javascript" src="scripts/Handler/TileGridHandler/Playables/ManaSummon.js"></script>
+
+
+    <script type="text/javascript" src="scripts/Handler/ScreenHandler/ScreenHandler.js"></script>
+    <script type="text/javascript" src="scripts/Handler/ScreenHandler/LoginScreenHandler.js"></script>
+    <script type="text/javascript" src="scripts/Handler/ScreenHandler/SelectScreenHandler.js"></script>
+
     <script type="text/javascript" src="scripts/Game.js"></script>
     <script type="text/javascript" src="scripts/script.js"></script>
 </head>
@@ -84,6 +92,8 @@
             <div id="selectScreenSelectionInfo"></div>
             <canvas id="selectScreenSelectionCanvas"></canvas>
             <div id="selectScreenSelectables"></div>
+            <button id="selectScreenBackButton" onclick="game.toTitle()">back</button>
+            <button id="selectScreenDoneButton" type="submit" onclick="game.commitSelection()" disabled>play</button>
         </form>
     </div>
 

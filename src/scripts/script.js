@@ -8,8 +8,8 @@ window.onload = function(){
 }
 
 function loop(){
-    game.update();
-    game.render();
+    game.update(window.performance.now());
+    game.render(window.performance.now());
 
     requestAnimationFrame(loop);
 }

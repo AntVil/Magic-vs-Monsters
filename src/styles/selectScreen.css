@@ -13,7 +13,7 @@
     transform: translate(-50%, -50%);
     display: grid;
     grid-template-columns: var(--selectScreenSelectableWidth) calc(var(--selectScreenSelectableWidth) * var(--selectScreenSelectablesInRow) / 2 + 1px + var(--scrollBarSize)) calc(var(--selectScreenSelectableWidth) * var(--selectScreenSelectablesInRow) / 2 + 1px);
-    grid-template-rows: calc(var(--selectScreenSelectableWidth) * var(--selectScreenSelectablesInRow) / 2 + 1px) calc(var(--selectScreenSelectableHeight) * var(--selectScreenSelectablesInColum) + 1px);
+    grid-template-rows: calc(var(--selectScreenSelectableWidth) * var(--selectScreenSelectablesInRow) / 2 + 1px) calc(var(--selectScreenSelectableHeight) * var(--selectScreenSelectablesInColum) + 1px) calc(var(--selectScreenSelectableHeight) * 1.5);
     gap: calc(var(--screenHeight) / 100);
 }
 
@@ -50,17 +50,35 @@
     overflow-y: scroll;
 }
 
+#selectScreenBackButton{
+    grid-column-start: 1;
+    grid-column-end: span 1;
+    grid-row-start: 3;
+    grid-row-end: span 1;
+
+    font-size: calc(var(--screenWidth) / 30);
+}
+
+#selectScreenDoneButton{
+    grid-column-start: 2;
+    grid-column-end: span 2;
+    grid-row-start: 3;
+    grid-row-end: span 1;
+
+    font-size: calc(var(--screenWidth) / 20);
+}
+
 
 
 .selectable{
     width: var(--selectScreenSelectableWidth);
     height: var(--selectScreenSelectableHeight);
     
-    background: url("../images/icons/default.png") no-repeat;
+    background: url("../images/icons/cardIcons/default.png") no-repeat;
 	background-size: cover;
 }
 
-.selectable:disabled{
+#selectScreenSelectables>.selectable:not(.choosable){
     -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
 }

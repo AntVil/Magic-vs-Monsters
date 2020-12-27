@@ -21,7 +21,7 @@
 }
 
 * {
-    transition: all 0.5s;
+    transition: all 0.25s;
     color: var(--fontColor);
     font-size: calc(var(--screenWidth) / 50);
 }
@@ -49,6 +49,25 @@ button {
     -webkit-touch-callout: none;
     -o-user-select: none;
     -moz-user-select: none;
+
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-crisp-edges;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+}
+
+button:disabled{
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
+canvas{
+    image-rendering: optimizeSpeed;
+    image-rendering: crisp-edges;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -o-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    -ms-interpolation-mode: nearest-neighbor;
 }
 
 input, button {
