@@ -54,6 +54,8 @@ button {
     image-rendering: -webkit-crisp-edges;
     image-rendering: pixelated;
     image-rendering: crisp-edges;
+
+    padding: 0;
 }
 
 button:disabled{
@@ -160,4 +162,22 @@ input[type=range]::-ms-thumb {
     input[type=range] {
         margin: 0;
     }
+}
+
+
+
+.scroll-Y::-webkit-scrollbar {
+    width: var(--scrollBarSize);
+    background-color: var(--accentColor1);
+    border-radius: 5px;
+}
+
+.scroll-Y::-webkit-scrollbar-thumb {
+    background: var(--buttonColor);
+    border-radius: 5px;
+}
+
+.scroll-Y{
+    scrollbar-color: var(--accentColor1) var(--buttonColor);
+    scrollbar-width: var(--scrollBarSize);
 }
