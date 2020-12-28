@@ -1,21 +1,25 @@
 :root {
-    --mainColor: #AAAAFF;
+    --mainColor1: #AAAAFF;
+    --mainColor2: #9999EE;
+    --mainColor3: #7777CC;
     --accentColor1: #0099FF;
     --accentColor2: #FF9900;
     --fontColor: #000000;
     --buttonColor: #8888DD;
-    --hoverColor: #00AAFF;
+    --hoverColor: #00CCFF;
     --focusColor: #0066AA;
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --mainColor: #1D1D1D;
+        --mainColor1: #1D1D1D;
+        --mainColor2: #222222;
+        --mainColor3: #333333;
         --accentColor1: #0099FF;
         --accentColor2: #FF9900;
         --fontColor: #EEEEEE;
         --buttonColor: #1A1A1A;
-        --hoverColor: #00AAFF;
+        --hoverColor: #00CCFF;
         --focusColor: #0066AA;
     }
 }
@@ -39,8 +43,18 @@
 }
 
 body {
-    background-color: var(--mainColor);
+    background-color: var(--mainColor1);
 }
+
+
+body>div>div, body>div>form{
+    background-color: var(--mainColor2);
+}
+
+body>div>div>div, body>div>div>form, body>div>form>div, body>div>form>form{
+    background-color: var(--mainColor3);
+}
+
 
 button {
     user-select: none;
@@ -55,7 +69,7 @@ button {
     image-rendering: pixelated;
     image-rendering: crisp-edges;
 
-    padding: 0;
+    text-align: center;
 }
 
 button:disabled{
@@ -99,7 +113,6 @@ input[type=range]::-webkit-slider-runnable-track {
     border-radius: 5px;
     width: 100%;
     height: calc(var(--screenWidth) / 50);
-    ;
     cursor: pointer;
 }
 
@@ -111,6 +124,10 @@ input[type=range]::-webkit-slider-thumb {
     border-radius: 50%;
     cursor: pointer;
     -webkit-appearance: none;
+}
+
+input[type=range]::-webkit-slider-thumb:hover{
+    background-color: var(--hoverColor);
 }
 
 input[type=range]::-moz-range-track {
@@ -132,38 +149,9 @@ input[type=range]::-moz-range-thumb {
     cursor: pointer;
 }
 
-input[type=range]::-ms-track {
-    background: transparent;
-    border-color: transparent;
-    border-width: 0px 0;
-    color: transparent;
-    width: 100%;
-    height: calc(var(--screenWidth) / 50);
-    cursor: pointer;
+input[type=range]::-moz-range-thumb:hover{
+    background-color: var(--hoverColor);
 }
-
-input[type=range]::-ms-fill-lower, input[type=range]::-ms-fill-upper {
-    background: #ffffd6;
-    border: 1px solid #000019;
-    border-radius: 5px;
-}
-
-input[type=range]::-ms-thumb {
-    margin-top: 0px;
-    width: calc(var(--screenWidth) / 50);
-    height: calc(var(--screenWidth) / 50);
-    background: var(--accentColor1);
-    background: linear-gradient(270deg, var(--accentColor1) 0%, var(--accentColor2) 100%);
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-@supports (-ms-ime-align:auto) {
-    input[type=range] {
-        margin: 0;
-    }
-}
-
 
 
 .scroll-Y::-webkit-scrollbar {
@@ -180,4 +168,12 @@ input[type=range]::-ms-thumb {
 .scroll-Y{
     scrollbar-color: var(--accentColor1) var(--buttonColor);
     scrollbar-width: var(--scrollBarSize);
+}
+
+.scroll-Y::-webkit-scrollbar-thumb:hover{
+    background: var(--hoverColor);
+}
+
+.scroll-Y{
+    scrollbar-color: var(--accentColor1) var(--hoverColor);
 }
