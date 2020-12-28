@@ -1,9 +1,15 @@
 :root{
-    --selectScreenSelectablesInRow: 4;
-    --selectScreenSelectablesInColum: 3;
-    --selectScreenSelectableWidth: calc(var(--screenWidth) / 12);
-    --selectScreenSelectableHeight: calc(var(--screenHeight) / 12);
+    --selectableWidth: calc(var(--screenWidth) / 12);
+    --selectableHeight: calc(var(--screenHeight) / 12);
+    --selectablesInRow: 4;
+    --selectablesAmount: 8;
+
+    
+
     --scrollBarSize: 20px;
+    --gripGapSize: calc(var(--screenHeight) / 100);
+
+    --selectInfoSize: calc((var(--selectableWidth) * var(--selectablesInRow) + var(--scrollBarSize)) / 2);
 }
 
 #selectScreen>form{
@@ -12,9 +18,9 @@
     top: 50%;
     transform: translate(-50%, -50%);
     display: grid;
-    grid-template-columns: var(--selectScreenSelectableWidth) calc(var(--selectScreenSelectableWidth) * var(--selectScreenSelectablesInRow) / 2 + 1px + var(--scrollBarSize)) calc(var(--selectScreenSelectableWidth) * var(--selectScreenSelectablesInRow) / 2 + 1px);
-    grid-template-rows: calc(var(--selectScreenSelectableWidth) * var(--selectScreenSelectablesInRow) / 2 + 1px) calc(var(--selectScreenSelectableHeight) * var(--selectScreenSelectablesInColum) + 1px) calc(var(--selectScreenSelectableHeight) * 1.5);
-    gap: calc(var(--screenHeight) / 100);
+    grid-template-columns: var(--selectableWidth) var(--selectInfoSize) var(--selectInfoSize);
+    grid-template-rows: var(--selectInfoSize) calc(var(--selectableHeight) * var(--selectablesAmount) - var(--selectInfoSize)) var(--selectableHeight);
+    gap: calc(var(--gripGapSize));
 }
 
 #selectScreenSelected {
@@ -22,6 +28,10 @@
     grid-column-end: span 1;
     grid-row-start: 1;
     grid-row-end: span 2;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(var(--selectablesAmount), 1fr);
 }
 
 #selectScreenSelectionInfo {
@@ -29,6 +39,9 @@
     grid-column-end: span 1;
     grid-row-start: 1;
     grid-row-end: span 1;
+
+    width: var(--selectInfoSize);
+    height: var(--selectInfoSize);
 }
 
 #selectScreenSelectionCanvas {
@@ -37,8 +50,8 @@
     grid-row-start: 1;
     grid-row-end: span 1;
 
-    width: 100%;
-    height: 100%;
+    width: var(--selectInfoSize);
+    height: var(--selectInfoSize);
 }
 
 #selectScreenSelectables {
@@ -46,8 +59,11 @@
     grid-column-end: span 2;
     grid-row-start: 2;
     grid-row-end: span 1;
-
+    
     overflow-y: scroll;
+
+    display: grid;
+    grid-template-columns: repeat(var(--selectablesInRow), 1fr);
 }
 
 #selectScreenBackButton{
@@ -71,8 +87,8 @@
 
 
 .selectable{
-    width: var(--selectScreenSelectableWidth);
-    height: var(--selectScreenSelectableHeight);
+    width: var(--selectableWidth);
+    height: var(--selectableHeight);
     
     background: url("../images/icons/cardIcons/default.png") no-repeat;
 	background-size: cover;

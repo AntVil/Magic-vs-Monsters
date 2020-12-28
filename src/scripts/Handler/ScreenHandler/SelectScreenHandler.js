@@ -14,7 +14,7 @@ class SelectScreenHandler {
         this.selectables = document.getElementById("selectScreenSelectables");
         this.doneButton = document.getElementById("selectScreenDoneButton");
 
-        this.MAXIMUM_SELECTED = 6;
+        this.MAXIMUM_SELECTED = 8;
         this.selectedAmount = 0;
 
         this.currentlySelected = null;
