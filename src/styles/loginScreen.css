@@ -7,6 +7,6 @@
 }
 
 #loginScreen>form>* {
-    font-size: calc(var(--screenWidth) / 20);
+    font-size: var(--largeFontSize);
     text-align: center;
 }

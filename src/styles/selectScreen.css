@@ -4,11 +4,6 @@
     --selectablesInRow: 4;
     --selectablesAmount: 8;
 
-    
-
-    --scrollBarSize: 20px;
-    --gripGapSize: calc(var(--screenHeight) / 100);
-
     --selectInfoSize: calc((var(--selectableWidth) * var(--selectablesInRow) + var(--scrollBarSize)) / 2);
 }
 
@@ -20,7 +15,7 @@
     display: grid;
     grid-template-columns: var(--selectableWidth) var(--selectInfoSize) var(--selectInfoSize);
     grid-template-rows: var(--selectInfoSize) calc(var(--selectableHeight) * var(--selectablesAmount) - var(--selectInfoSize)) var(--selectableHeight);
-    gap: calc(var(--gripGapSize));
+    gap: var(--gridGapSize);
 }
 
 #selectScreenSelected {
@@ -72,7 +67,7 @@
     grid-row-start: 3;
     grid-row-end: span 1;
 
-    font-size: calc(var(--screenWidth) / 30);
+    font-size: var(--mediumFontSize);
 }
 
 #selectScreenDoneButton{
@@ -81,7 +76,7 @@
     grid-row-start: 3;
     grid-row-end: span 1;
 
-    font-size: calc(var(--screenWidth) / 20);
+    font-size: var(--mediumFontSize);
 }
 
 

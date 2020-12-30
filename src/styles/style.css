@@ -47,15 +47,6 @@ body {
 }
 
 
-body>div>div, body>div>form{
-    background-color: var(--mainColor2);
-}
-
-body>div>div>div, body>div>div>form, body>div>form>div, body>div>form>form{
-    background-color: var(--mainColor3);
-}
-
-
 button {
     user-select: none;
     -webkit-user-select: none;

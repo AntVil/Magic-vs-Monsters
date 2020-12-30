@@ -11,7 +11,7 @@
     left: 50%;
     top: 25%;
     text-align: center;
-    font-size: calc(var(--screenWidth) / 10);
+    font-size: var(--hugeFontSize);
     animation: titleAnimation 3s infinite;
 }
 
@@ -47,11 +47,11 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    gap: calc(var(--screenHeight) / 200);
+    gap: var(--gridGapSize);
 }
 
 #titleScreen>form>* {
-    font-size: calc(var(--screenWidth) / 20);
+    font-size: var(--largeFontSize);
 }
 
 #titleScreenStoryModeButton {

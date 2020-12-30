@@ -8,11 +8,11 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(4, 1fr);
-    gap: calc(var(--screenHeight) / 100);
+    gap: var(--gridGapSize);
 }
 
 #optionsScreen>form>* {
-    font-size: calc(var(--screenWidth) / 20);
+    font-size: var(--largeFontSize);
     text-align: center;
 }
 
