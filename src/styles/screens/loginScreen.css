@@ -1,0 +1,12 @@
+#loginScreen>form{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: calc(var(--screenWidth) / 30);
+    display: grid;
+    gap: var(--gapSize);
+    background-color: var(--themeColor_6);
+    border: 3px solid var(--themeColor_7);
+    border-radius: 10px;
+}

@@ -7,103 +7,46 @@
     <title>Magic-vs-Monsters</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
 
-    <link rel="icon" type="image/png" href="images/icons/pageIcons/default.png">
+    <!--link rel="icon" type="image/png" href="images/Logo.png"-->
+    
+    <link rel="stylesheet" href="styles/generic/style.css">
+    <link rel="stylesheet" href="styles/generic/layout.css">
+    <link rel="stylesheet" href="styles/generic/elements.css">
 
-    <link rel="stylesheet" href="styles/layout.css">
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="styles/loginScreen.css">
-    <link rel="stylesheet" href="styles/titleScreen.css">
-    <link rel="stylesheet" href="styles/optionsScreen.css">
-    <link rel="stylesheet" href="styles/aboutScreen.css">
-    <link rel="stylesheet" href="styles/selectScreen.css">
-    <link rel="stylesheet" href="styles/inGameScreen.css">
-
-
-    <script type="text/javascript" src="scripts/Handler/InputHandler.js"></script>
-    <script type="text/javascript" src="scripts/Handler/AudioHandler.js"></script>
-    <script type="text/javascript" src="scripts/Handler/AccountHandler.js"></script>
-
-    <script type="text/javascript" src="scripts/Handler/TileGridHandler/TileGridHandler.js"></script>
-    <script type="text/javascript" src="scripts/Handler/TileGridHandler/Playables/ManaSummon.js"></script>
-
-
-    <script type="text/javascript" src="scripts/Handler/ScreenHandler/ScreenHandler.js"></script>
-    <script type="text/javascript" src="scripts/Handler/ScreenHandler/LoginScreenHandler.js"></script>
-    <script type="text/javascript" src="scripts/Handler/ScreenHandler/SelectScreenHandler.js"></script>
-
+    <link rel="stylesheet" href="styles/screens/loginScreen.css">
+    <link rel="stylesheet" href="styles/screens/titleScreen.css">
+    
+    <script type="text/javascript" src="scripts/ScreenHandler.js"></script>
     <script type="text/javascript" src="scripts/Game.js"></script>
     <script type="text/javascript" src="scripts/script.js"></script>
 </head>
 
 <body>
-
-    <div id="loginScreen" class="screen">
-        <form onsubmit="return false">
-            <input id="loginScreenUsernameInput" type="text" name="username" placeholder="username" />
-            <br>
-            <br>
-            <button type="submit" onclick="game.login()">play</button>
+    <div class="screen" id="loginScreen">
+        <form onsubmit="return false;">
+            <input id="usernameInput" placeholder="username" />
+            <button onclick="game.login()">login</button>
         </form>
     </div>
 
-    <div id="titleScreen" class="screen">
-        <canvas id="titleScreenCanvas"></canvas>
-
-        <h1>Magic-vs-Monsters</h1>
-
-        <form onsubmit="return false">
-            <button id="titleScreenStoryModeButton" onclick="game.startStoryMode()">story-mode</button>
-            <button id="titleScreenEndlessModeButton" onclick="game.startEndlessMode()">endless-mode</button>
-            <button id="titleScreenOptionsButton" onclick="game.toOptions()">options</button>
-            <button id="titleScreenAboutButton" onclick="game.toAbout()">about</button>
+    <div class="screen" id="titleScreen">
+        <form onsubmit="return false;">
+            <h1>Magic-vs-Monsters</h1>
+            <button onclick="game.startRegular()">regular mode</button>
+            <button onclick="game.startEndless()">endless mode</button>
+            <button onclick="game.screenHandler.displayOptions()">options</button>
+            <button onclick="game.screenHandler.toScreen('aboutScreen')">about</button>
         </form>
     </div>
 
-    <div id="optionsScreen" class="screen">
-        <form onsubmit="return false">
-            <label id="optionsScreenDifficultyLabel" for="difficulty">difficulty</label>
-            <input id="optionsScreenDifficultySlider" name="difficulty" type="range" min="0" max="2" step="1" />
-            <label id="optionsScreenMusicVolumeLabel" for="musicVolume">music volume</label>
-            <input id="optionsScreenMusicVolumeSlider" name="musicVolume" type="range" min="0" max="100" step="1" />
-            <label id="optionsScreenSoundVolumeLabel" for="soundVolume">sound volume</label>
-            <input id="optionsScreenSoundVolumeSlider" name="soundVolume" type="range" min="0" max="100" step="1" />
-            <button id="optionsScreenDoneButton" type="submit" onclick="game.toTitle()">done</button>
-        </form>
-    </div>
-
-    <div id="aboutScreen" class="screen">
-        <form onsubmit="return false">
-            <article>
-                This is a project to create a tower-defense and strategy game.
-            </article>
-            <button type="submit" onclick="game.toTitle()">done</button>
-        </form>
-    </div>
-
-    <div id="selectScreen" class="screen">
-        <canvas id="selectScreenCanvas"></canvas>
-
-        <div id="selectScreenPause">
-
-        </div>
-
-        <form onsubmit="return false">
-            <div id="selectScreenSelected"></div>
-            <div id="selectScreenSelectionInfo"></div>
-            <canvas id="selectScreenSelectionCanvas"></canvas>
-            <div id="selectScreenSelectables" class="scroll-Y"></div>
-            <button id="selectScreenBackButton" onclick="game.toTitle()">back</button>
-            <button id="selectScreenDoneButton" type="submit" onclick="game.commitSelection()" disabled>play</button>
-        </form>
-    </div>
-
-    <div id="inGameScreen" class="screen">
-        <div id="inGameScreenPause">
-
-        </div>
+    <div class="screen" id="gameScreen">
 
     </div>
 
+    <div class="screen" id="aboutScreen">
+        <h6>created by AntVil</h6>
+        <button onclick="game.screenHandler.toScreen('titleScreen')">done</button>
+    </div>
 </body>
 
 </html>

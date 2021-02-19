@@ -1,0 +1,18 @@
+:root{
+    --screenWidth: calc(min(100vw, 100vh / 9 * 16));
+    --screenHeight: calc(var(--screenWidth) * 9 / 16);
+    --smallFontSize: calc(var(--screenWidth) / 75);
+    --mediumFontSize: calc(var(--screenWidth) / 50);
+    --bigFontSize: calc(var(--screenWidth) / 35);
+    --hugeFontSize: calc(var(--screenWidth) / 25);
+    --gapSize: calc(var(--screenWidth) / 90);
+}
+
+.screen{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    width: var(--screenWidth);
+    height: var(--screenHeight);
+    transform: translate(-50%, -50%);
+}

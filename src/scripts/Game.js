@@ -1,57 +1,24 @@
 class Game{
     constructor(){
-        this.screenHandler = new ScreenHandler(this);
-        this.inputHandler = new InputHandler(this);
-        this.audioHandler = new AudioHandler(this);
-        this.tileGridHandler = new TileGridHandler(this);
-        this.accountHandler = new AccountHandler(this);
-    }
+        this.screenHandler = new ScreenHandler();
 
-    toLogin(){
-        this.screenHandler.toLoginScreen();
+
+        this.screenHandler.toScreen("loginScreen");
     }
 
     login(){
-        let name = this.screenHandler.getUsername();
-        if(name !== ""){
-            this.accountHandler.user(name);
-            this.toTitle();
+        let username = this.screenHandler.getUsername().trim();
+        if(username.length > 0){
+
+            this.screenHandler.toScreen("titleScreen");
         }
     }
 
-    toTitle(){
-        this.screenHandler.toTitleScreen();
+    startRegular(){
+
     }
 
-    toOptions(){
-        this.screenHandler.toOptionsScreen();
-    }
-
-    toAbout(){
-        this.screenHandler.toAboutScreen();
-    }
-
-    startStoryMode(){
-        let selectables = this.tileGridHandler.getPlayables();
-        this.screenHandler.setupSelectScreen(selectables);
-        this.screenHandler.toSelectScreen();
-    }
-
-    startEndlessMode(){
-        let selectables = this.tileGridHandler.getPlayables();
-        this.screenHandler.setupSelectScreen(selectables);
-        this.screenHandler.toSelectScreen();
-    }
-
-    commitSelection(){
-        this.screenHandler.toInGameScreen();
-    }
-
-    update(elapsedTime){
+    startEndless(){
         
-    }
-
-    render(elapsedTime){
-        this.screenHandler.render(elapsedTime);
     }
 }

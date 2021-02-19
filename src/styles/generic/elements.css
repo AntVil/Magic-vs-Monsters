@@ -1,0 +1,17 @@
+h1, h2, h3, h4, h5, h6{
+    color: var(--themeColor_3);
+}
+
+input, button{
+    background-color: var(--themeColor_4);
+    color: var(--themeColor_3);
+    border: 3px solid var(--themeColor_7);
+    border-radius: 10px;
+    font-size: var(--mediumFontSize);
+    text-align: center;
+}
+
+button:hover, button:focus, input:hover, input:focus{
+    color: var(--themeColor_5);
+    border-color: var(--themeColor_5);
+}
