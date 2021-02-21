@@ -16,9 +16,13 @@ class Game{
 
     startRegular(){
 
+
+        this.screenHandler.toScreen("selectScreen");
     }
 
     startEndless(){
         
+
+        this.screenHandler.toScreen("selectScreen");
     }
 }

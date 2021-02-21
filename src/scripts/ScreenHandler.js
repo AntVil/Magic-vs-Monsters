@@ -3,6 +3,7 @@ class ScreenHandler{
         this.screens = [
             document.getElementById("loginScreen"),
             document.getElementById("titleScreen"),
+            document.getElementById("selectScreen"),
             document.getElementById("gameScreen"),
             document.getElementById("aboutScreen"),
         ];

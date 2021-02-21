@@ -6,6 +6,10 @@
     --bigFontSize: calc(var(--screenWidth) / 35);
     --hugeFontSize: calc(var(--screenWidth) / 25);
     --gapSize: calc(var(--screenWidth) / 90);
+    --scrollbarWidth: 10px;
+    --cardWidth: calc(var(--screenWidth) / 8);
+    --cardHeight: calc(var(--cardWidth) * 9 / 16);
+    --selectableCards: 7;
 }
 
 .screen{

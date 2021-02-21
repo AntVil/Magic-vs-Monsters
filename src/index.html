@@ -15,6 +15,7 @@
 
     <link rel="stylesheet" href="styles/screens/loginScreen.css">
     <link rel="stylesheet" href="styles/screens/titleScreen.css">
+    <link rel="stylesheet" href="styles/screens/selectScreen.css">
     
     <script type="text/javascript" src="scripts/ScreenHandler.js"></script>
     <script type="text/javascript" src="scripts/Game.js"></script>
@@ -36,6 +37,39 @@
             <button onclick="game.startEndless()">endless mode</button>
             <button onclick="game.screenHandler.displayOptions()">options</button>
             <button onclick="game.screenHandler.toScreen('aboutScreen')">about</button>
+        </form>
+    </div>
+
+    <div class="screen" id="selectScreen">
+        <form>
+            <section id="selected">
+                <button></button>
+                <button></button>
+                <button></button>
+                <button></button>
+                <button></button>
+                <button></button>
+                <button></button>
+            </section>
+            <section id="selectedInfo">
+                <span id="selectedInfoText">info text</span>
+                <canvas id="selectedInfoCanvas"></canvas>
+            </section>
+            <section id="selectables">
+                <button></button>
+                <button></button>
+                <button></button>
+                <button></button>
+                <button></button>
+                <button></button>
+                <button></button>
+                <button></button>
+                <button></button>
+                <button></button>
+                <button></button>
+                <button></button>
+                <button></button>
+            </section>
         </form>
     </div>
 

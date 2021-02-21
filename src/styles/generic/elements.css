@@ -2,6 +2,10 @@ h1, h2, h3, h4, h5, h6{
     color: var(--themeColor_3);
 }
 
+h1{
+    font-size: var(--hugeFontSize);
+}
+
 input, button{
     background-color: var(--themeColor_4);
     color: var(--themeColor_3);
