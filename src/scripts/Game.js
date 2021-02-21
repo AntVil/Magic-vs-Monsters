@@ -1,3 +1,5 @@
+const SELECTABLE_CARDS = 7;
+
 class Game{
     constructor(){
         this.screenHandler = new ScreenHandler();
@@ -14,15 +16,21 @@ class Game{
         }
     }
 
-    startRegular(){
+    modeRegular(){
 
 
         this.screenHandler.toScreen("selectScreen");
     }
 
-    startEndless(){
+    modeEndless(){
         
 
         this.screenHandler.toScreen("selectScreen");
+    }
+
+    start(){
+
+
+        this.screenHandler.toScreen("gameScreen");
     }
 }

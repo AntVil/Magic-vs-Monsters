@@ -6,6 +6,22 @@ h1{
     font-size: var(--hugeFontSize);
 }
 
+h2{
+    font-size: var(--largeFontSize);
+}
+
+h3{
+    font-size: var(--bigFontSize);
+}
+
+h4{
+    font-size: var(--mediumFontSize);
+}
+
+h5{
+    font-size: var(--smallFontSize);
+}
+
 input, button{
     background-color: var(--themeColor_4);
     color: var(--themeColor_3);
@@ -18,4 +34,28 @@ input, button{
 button:hover, button:focus, input:hover, input:focus{
     color: var(--themeColor_5);
     border-color: var(--themeColor_5);
+}
+
+input:disabled, button:disabled{
+    background-color: var(--themeColor_2);
+}
+
+.scrollbar{
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scrollbar-color: var(--themeColor_4) var(--themeColor_7);
+    scrollbar-width: thin;
+}
+
+.scrollbar::-webkit-scrollbar-thumb{
+    background-color: var(--themeColor_4);
+    border-radius: 15px;
+    border: 0px solid transparent;
+    background-clip: content-box;
+}
+
+.scrollbar::-webkit-scrollbar{
+    background-color: var(--themeColor_7);
+    border-radius: 15px;
+    width: var(--scrollbarWidth);
 }

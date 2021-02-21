@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="styles/screens/titleScreen.css">
     <link rel="stylesheet" href="styles/screens/selectScreen.css">
     
+    <script type="text/javascript" src="scripts/Card.js"></script>
+    <script type="text/javascript" src="scripts/SelectScreenHandler.js"></script>
     <script type="text/javascript" src="scripts/ScreenHandler.js"></script>
     <script type="text/javascript" src="scripts/Game.js"></script>
     <script type="text/javascript" src="scripts/script.js"></script>
@@ -33,43 +35,25 @@
     <div class="screen" id="titleScreen">
         <form onsubmit="return false;">
             <h1>Magic-vs-Monsters</h1>
-            <button onclick="game.startRegular()">regular mode</button>
-            <button onclick="game.startEndless()">endless mode</button>
+            <button onclick="game.modeRegular()">regular mode</button>
+            <button onclick="game.modeEndless()">endless mode</button>
             <button onclick="game.screenHandler.displayOptions()">options</button>
             <button onclick="game.screenHandler.toScreen('aboutScreen')">about</button>
         </form>
     </div>
 
     <div class="screen" id="selectScreen">
-        <form>
-            <section id="selected">
-                <button></button>
-                <button></button>
-                <button></button>
-                <button></button>
-                <button></button>
-                <button></button>
-                <button></button>
-            </section>
+        <form onsubmit="return false;">
+            <section id="selected"></section>
             <section id="selectedInfo">
-                <span id="selectedInfoText">info text</span>
+                <span id="selectedInfoText">
+                    <h4 id="selectedInfoName"></h4>
+                    <span class="scrollbar" id="selectedInfoDescription"></span>
+                </span>
                 <canvas id="selectedInfoCanvas"></canvas>
             </section>
-            <section id="selectables">
-                <button></button>
-                <button></button>
-                <button></button>
-                <button></button>
-                <button></button>
-                <button></button>
-                <button></button>
-                <button></button>
-                <button></button>
-                <button></button>
-                <button></button>
-                <button></button>
-                <button></button>
-            </section>
+            <section class="scrollbar" id="selectables"></section>
+            <button id="startButton" onclick="game.start()" disabled>start</button>
         </form>
     </div>
 
@@ -78,7 +62,7 @@
     </div>
 
     <div class="screen" id="aboutScreen">
-        <h6>created by AntVil</h6>
+        <h5>created by AntVil</h5>
         <button onclick="game.screenHandler.toScreen('titleScreen')">done</button>
     </div>
 </body>

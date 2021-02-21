@@ -25,10 +25,6 @@
     }
 }
 
-*{
-    transition: all 0.2s;
-}
-
 body{
     background-color: var(--screenMarginColor);
 }

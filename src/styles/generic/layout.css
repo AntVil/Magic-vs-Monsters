@@ -4,10 +4,11 @@
     --smallFontSize: calc(var(--screenWidth) / 75);
     --mediumFontSize: calc(var(--screenWidth) / 50);
     --bigFontSize: calc(var(--screenWidth) / 35);
+    --largeFontSize: calc(var(--screenWidth) / 35);
     --hugeFontSize: calc(var(--screenWidth) / 25);
     --gapSize: calc(var(--screenWidth) / 90);
-    --scrollbarWidth: 10px;
-    --cardWidth: calc(var(--screenWidth) / 8);
+    --scrollbarWidth: 7px;
+    --cardWidth: calc(var(--screenWidth) / 12);
     --cardHeight: calc(var(--cardWidth) * 9 / 16);
     --selectableCards: 7;
 }

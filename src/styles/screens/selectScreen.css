@@ -9,11 +9,12 @@
     transform: translate(-50%, -50%);
     padding: calc(var(--screenWidth) / 30);
     display: grid;
-    grid-template-columns: var(--cardWidth) calc(var(--cardWidth) * var(--cardsPercolumn));
-    grid-template-rows: calc(var(--cardWidth) * var(--cardsPercolumn) * 0.5) calc(var(--cardHeight) * var(--selectableCards) - var(--cardWidth) * var(--cardsPercolumn) * 0.5);
+    grid-template-columns: var(--cardWidth) calc(var(--cardWidth) * var(--cardsPercolumn) + var(--scrollbarWidth));
+    grid-template-rows: calc(var(--cardWidth) * var(--cardsPercolumn) * 0.5) calc(var(--cardHeight) * var(--selectableCards) - var(--cardWidth) * var(--cardsPercolumn) * 0.5) var(--cardHeight);
     background-color: var(--themeColor_6);
     border: 3px solid var(--themeColor_7);
     border-radius: 10px;
+    gap: var(--gapSize);
 }
 
 #selected{
@@ -24,7 +25,10 @@
 
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(var(--selectableCards), 1fr)
+    grid-template-rows: repeat(var(--selectableCards), 1fr);
+
+    background-color: var(--themeColor_7);
+    border-radius: 10px;
 }
 
 #selectedInfo{
@@ -47,8 +51,6 @@
     display: grid;
     grid-template-columns: repeat(var(--cardsPercolumn), var(--cardWidth));
     grid-template-rows: var(--cardHeight);
-    overflow-y: scroll;
-    overflow-x: hidden;
 }
 
 #selectables>*{
@@ -65,7 +67,10 @@
     width: calc(var(--cardWidth) * var(--cardsPercolumn) * 0.5);
     height: calc(var(--cardWidth) * var(--cardsPercolumn) * 0.5);
 
-    overflow-y: scroll;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: var(--mediumFontSize) 1fr;
+    gap: var(--gapSize);
 }
 
 #selectedInfoCanvas{
@@ -78,4 +83,20 @@
     height: calc(var(--cardWidth) * var(--cardsPercolumn) * 0.5);
 
     background-color: var(--themeColor_1);
+}
+
+#selectedInfoName{
+    margin: 0;
+}
+
+#selectedInfoDescription{
+    display: block;
+    font-size: var(--smallFontSize);
+}
+
+#startButton{
+    grid-column-start: 1;
+    grid-column-end: span 2;
+    grid-row-start: 3;
+    grid-row-end: span 1;
 }

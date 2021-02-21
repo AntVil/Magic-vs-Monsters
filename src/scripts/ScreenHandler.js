@@ -1,6 +1,6 @@
 class ScreenHandler{
     constructor(){
-        this.screens = [
+        this.screenElements = [
             document.getElementById("loginScreen"),
             document.getElementById("titleScreen"),
             document.getElementById("selectScreen"),
@@ -8,21 +8,27 @@ class ScreenHandler{
             document.getElementById("aboutScreen"),
         ];
 
-        this.usernameInput = document.getElementById("usernameInput");
+        this.usernameInputElement = document.getElementById("usernameInput");
+
+        this.selectScreenHandler = new SelectScreenHandler();
     }
 
     toScreen(screen){
-        for(let i=0;i<this.screens.length;i++){
-            if(this.screens[i].id == screen){
-                this.screens[i].style.visibility = "visible";
+        for(let i=0;i<this.screenElements.length;i++){
+            if(this.screenElements[i].id == screen){
+                this.screenElements[i].style.visibility = "visible";
             }else{
-                this.screens[i].style.visibility = "hidden";
+                this.screenElements[i].style.visibility = "hidden";
             }
+        }
+
+        if(screen == "gameScreen"){
+            console.log(this.selectScreenHandler.getSelectedCards());
         }
     }
 
     getUsername(){
-        return this.usernameInput.value;
+        return this.usernameInputElement.value;
     }
 
     displayOptions(){
